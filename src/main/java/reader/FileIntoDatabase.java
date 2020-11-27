@@ -44,9 +44,15 @@ public class FileIntoDatabase{
         }
         return "Datei nicht auslesesbar!";
     }
+
+    public String getStationName(String html){
+
+        String stationName;
+        stationName = html.substring(8968, )
+    }
     
     
-    
+
     public String getPrices(String hmtl){ // sets the price attribte of eevery station class
         Station [] stationNumber= new Station();
 
