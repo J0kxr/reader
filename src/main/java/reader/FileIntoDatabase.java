@@ -19,6 +19,7 @@ public class FileIntoDatabase{
     public String DateiAuslesen(String dateiname){
         BufferedReader file = null;
         String fullText = null;
+
         try{
         file = new BufferedReader(new FileReader(dateiname));
         //readout the file
@@ -41,10 +42,24 @@ public class FileIntoDatabase{
             e.printStackTrace();
             }
         }
-
         return "Datei nicht auslesesbar!";
     }
-       
+    
+    
+    
+    public String getPrices(String hmtl){ // sets the price attribte of eevery station class
+        Station [] stationNumber= new Station();
+
+        float[] price = new price[0, 1, 2, 3];
+        price[0] = (float) html.substring(9042, 9047);
+        price[1] = (float) html.substring(10188, 10193);
+        price[2] = (float) html.substring(11331, 11336);
+        price[3] = (float) html.substring(12485, 12490);
+    }
+
+    
+
+
     
 
     
