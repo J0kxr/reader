@@ -9,4 +9,8 @@ public class Station{
 
 
     }
+
+    public void setPrice(int price){
+        this.price = price;
+    }
 }
