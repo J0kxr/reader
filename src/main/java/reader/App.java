@@ -5,9 +5,22 @@ package reader;
 import java.io.*;
 
 public class App {
+
+  private String name;
+  private float price;
+  private String time; 
+
         public static void main(String[] args) {
         
             FileIntoDatabase f = new FileIntoDatabase();
+            System.out.println("D/B_ID");//ID fuer Tankstelle
+            System.out.println("D/B_Jahr");
+            System.out.println("D/B_Monat");
+            System.out.println("D/B_Tag");
+            System.out.println("D/B_Uhrzeit");
+            System.out.println("D/B_T_ID");//ID fuer Tankstelle bzw. zugehörig zur Tankstelle
+            System.out.println("D/B_Preis");
+          
             String dataName;
             //dataName = f.DateiAuslesen(f.getAlleDateiNamen());
             //dataName = "Fri Sep 18 14:37:55 CEST 2020";
@@ -17,6 +30,7 @@ public class App {
                 System.out.println(f.DateiAuslesen(dataName)); 
                 s = f.DateiAuselsen(dataName);
                 f.getPrices(s);
+
             }
               catch(Exception e) {
                 e.printStackTrace();
