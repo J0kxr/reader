@@ -10,17 +10,21 @@ public class App {
   private float price;
   private String time; 
 
+
         public static void main(String[] args) {
-        
-            FileIntoDatabase f = new FileIntoDatabase();
-            System.out.println("D/B_ID");//ID fuer Tankstelle
-            System.out.println("D/B_Jahr");
-            System.out.println("D/B_Monat");
-            System.out.println("D/B_Tag");
-            System.out.println("D/B_Uhrzeit");
+            
+          
+          ID id = new ID();          
+            System.out.println("D/B_ID: " + id);//ID fuer Zeile
+            Dates longDate = new Dates();
+            System.out.println("D/B_Jahr: " + longDate.getYear());
+            System.out.println("D/B_Monat: " + longDate.getMonth());
+            System.out.println("D/B_Tag: " + longDate.getDay());
+            System.out.println("D/B_Uhrzeit: " + longDate.getTime());
             System.out.println("D/B_T_ID");//ID fuer Tankstelle bzw. zugehörig zur Tankstelle
             System.out.println("D/B_Preis");
-          
+            
+            FileIntoDatabase f = new FileIntoDatabase();
             String dataName;
             //dataName = f.DateiAuslesen(f.getAlleDateiNamen());
             //dataName = "Fri Sep 18 14:37:55 CEST 2020";
