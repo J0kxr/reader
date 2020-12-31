@@ -19,7 +19,7 @@ public class Date{
     }
 
     public int actualYear(String now){
-        String yearString = now.substring(25,29);
+        String yearString = now.substring(26,29);
         int year = Integer.parseInt(yearString);
 
         setYear(year);
@@ -27,8 +27,12 @@ public class Date{
     }
 
 
-    public int actualMonth(String now ){
-
+    public int actualMonth(String now){
+        String monthString = now.substring(5,7);
+        int month = Integer.parseInt(monthString);
+        
+        setMonth(month);
+        return month;
     }
 
     public void setYear(int year){
