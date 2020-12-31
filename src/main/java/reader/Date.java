@@ -9,25 +9,25 @@ public class Date{
     private int month;
     private int day;
     
+    Date d = new Date();
+    String dString = d.toString();
+    //Mon Jul 28 14:20:20 CEST 2003
+
     public Date(){
-        year = actualYear();
-        month = actualMonth()
+        year = actualYear( dString);
+        month = actualMonth(dString);
     }
 
-    public int actualYear(){
-        Date d = new Date();
-        String dString = d.toString();
-        //Mon Jul 28 14:20:20 CEST 2003
-
-        dString = dString.substring(25,29);
-        int year = Integer.parseInt(dString);
+    public int actualYear(String now){
+        String yearString = now.substring(25,29);
+        int year = Integer.parseInt(yearString);
 
         setYear(year);
         return year;
     }
 
-    
-    public int actualMonth(){
+
+    public int actualMonth(String now ){
 
     }
 
