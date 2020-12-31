@@ -1,9 +1,7 @@
 package reader;
 
-import java.lang.Object.*;
-import java.lang.String.*;
 import java.util.Date;
-import java.util.Date.*;
+
 
 public class Dates{
 
@@ -14,37 +12,35 @@ public class Dates{
     Date d = new Date();
     String dateString = d.toString();
     //Mon Jul 28 14:20:20 CEST 2003
-
-    actualYear(dateString);
-    actualMonth(dateString);
-    actualDay(dateString);
-
+    
     public Dates(){
-        year = getYear();
-        month = getMonth();
-        day = getDay();
+        year = actualYear(dateString);
+        month = actualMonth(dateString);
+        day = actualDay(dateString);
     }
 
-
-    public void actualYear(String now){
+    public int actualYear(String now){
         String yearString = now.substring(26,29);
         int year = Integer.parseInt(yearString);
 
         setYear(year);
+        return year;
     }
 
-    public void actualMonth(String now){
+    public int actualMonth(String now){
         String monthString = now.substring(5,7);
         int month = Integer.parseInt(monthString);
         
         setMonth(month);
+        return month;
     }
 
-    public void actualDay(String now){
+    public int actualDay(String now){
         String dayString = now.substring(9,10);
         int day = Integer.parseInt(dayString);
 
         setDay(day);
+        return day;
     }
 
     public void setYear(int year){
