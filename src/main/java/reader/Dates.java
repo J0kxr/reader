@@ -8,6 +8,7 @@ public class Dates{
     private int year;
     private int month;
     private int day;
+    private String time;
     
     Date d = new Date();
     String dateString = d.toString();
@@ -17,6 +18,7 @@ public class Dates{
         year = actualYear(dateString);
         month = actualMonth(dateString);
         day = actualDay(dateString);
+        time = actualTime(dateString);
     }
 
     public int actualYear(String now){
@@ -43,6 +45,12 @@ public class Dates{
         return day;
     }
 
+    public String actualTime(String now){
+        String time = now.substring(12,19);
+        setTime(time);
+        return time;
+    }
+
     public void setYear(int year){
         this.year = year;
     }
@@ -65,5 +73,13 @@ public class Dates{
 
     public int getDay(){
         return this.day;
+    }
+
+    public void setTime(String time){
+        this.time = time; 
+    }
+    
+    public String getTime(){
+        return this.time;
     }
 }
