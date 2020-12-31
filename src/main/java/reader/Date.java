@@ -16,6 +16,7 @@ public class Date{
     public Date(){
         year = actualYear( dString);
         month = actualMonth(dString);
+        day = actualDay(dString);
     }
 
     public int actualYear(String now){
@@ -35,6 +36,15 @@ public class Date{
         return month;
     }
 
+
+    public int actualDay(String now){
+        String dayString = now.substring(9,10);
+        int day = Integer.parseInt(dayString);
+
+        setDay(day);
+        return day;
+    }
+
     public void setYear(int year){
         this.year = year;
     }
@@ -49,5 +59,13 @@ public class Date{
 
     public int getMonth(){
         return this.month;
+    }
+
+    public void setDay(int day){
+        this.day = day;
+    }
+
+    public int getDay(){
+        return this.day;
     }
 }
