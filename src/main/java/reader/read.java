@@ -33,19 +33,19 @@ public class read{
 
             switch(i){
                 case 00:
-                    GasStation = text.substring();//Shell
+                    GasStation = text.substring(9018, 9040);//Ferie
                     break;
                 case 01:
-                    GasStation = text.substring();//Freie 
+                    GasStation = text.substring(10166, 10186);//OMV 
                     break;
                 case 02:
-                    GasStation = text.substring();//Edeka
+                    GasStation = text.substring(11307, 11329);//SHell
                     break;
                 case 03:
-                    GasStation = text.substring();//OMV
+                    GasStation = text.substring(12458, 12483);//E-Center
                     break;
-                default 04:
-                    GasStation = text.substring();//Mowak aka Tankpool
+                default :
+                    GasStation = text.substring(13611, 13638);//Mowak aka Tankpool
                     break;
 
             }
