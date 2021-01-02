@@ -50,6 +50,7 @@ public class read{
             }          
         }
 
+        
         public float parsePrice(int ID){
             //ließt Preis aus 
             float price;
@@ -60,16 +61,16 @@ public class read{
                     price = Float.parseFloat(text.substring(9042, 9047));
                     return price;
                 case 01:
-                    price = text.substring();
+                    price = Float.parseFloat(text.substring(10188, 10193));
                     return price;
                 case 02:
-                    price = text.substring();
+                    price = Float.parseFloat(text.substring(11331, 113366));
                     return price;
                 case 03:
-                    price = text.substring();
+                    price = Float.parseFloat(text.substring(12485, 12490));
                     return price;
                 default:
-                    price = text.substring();
+                    price = Float.parseFloat(text.substring(13640, 13645));
                     return price;
             }
             
@@ -79,6 +80,7 @@ public class read{
 
         public void setHTML(String hmtl){
             this.html = html;
+            //TODO(Torben): look for the static var and why is it here useless!
         }
 
         public String getHTML(){
