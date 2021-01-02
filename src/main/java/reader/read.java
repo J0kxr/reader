@@ -1,7 +1,6 @@
 package reader;
 
 import java.io.*;
-import java.lang.*;
 
 public class read{
 
@@ -20,18 +19,18 @@ public class read{
             setHTML(lines);
         }
 
-    public read(int ID, String path) throws IOException{
+    public read(int GasID, String path) throws IOException{
         readHTML(path);
-        parseGasStationOverID(ID);
-        parsePrice(ID);
+        parseGasStationOverID(GasID);
+        parsePrice(GasID);
     }
 
-        public String parseGasStationOverID(int ID){
+        public String parseGasStationOverID(int GasID){
             //liest Tankstelle aus
             String GasStation;
             String text = getHTML();
 
-            switch(ID){
+            switch(GasID){
                 case 00:
                     GasStation = text.substring(9018, 9040);//Ferie
                     return GasStation;
@@ -50,13 +49,13 @@ public class read{
             }          
         }
 
-        
-        public float parsePrice(int ID){
+
+        public float parsePrice(int GasID){
             //ließt Preis aus 
             float price;
             String text = getHTML();
             
-            switch (ID){
+            switch (GasID){
                 case 00:
                     price = Float.parseFloat(text.substring(9042, 9047));
                     return price;
