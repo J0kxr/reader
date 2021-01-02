@@ -1,6 +1,7 @@
 package reader;
 
 import java.io.*;
+import java.lang.*;
 
 public class read{
 
@@ -56,7 +57,7 @@ public class read{
             
             switch (ID){
                 case 00:
-                    price = text.substring();
+                    price = Float.parseFloat(text.substring(9042, 9047));
                     return price;
                 case 01:
                     price = text.substring();
