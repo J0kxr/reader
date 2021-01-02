@@ -27,35 +27,50 @@ public class read{
 
         public String parseGasStationOverID(int ID){
             //liest Tankstelle aus
-            int i = ID;
             String GasStation;
             String text = getHTML();
 
-            switch(i){
+            switch(ID){
                 case 00:
                     GasStation = text.substring(9018, 9040);//Ferie
-                    break;
+                    return GasStation;
                 case 01:
                     GasStation = text.substring(10166, 10186);//OMV 
-                    break;
+                    return GasStation;
                 case 02:
                     GasStation = text.substring(11307, 11329);//SHell
-                    break;
+                    return GasStation;
                 case 03:
                     GasStation = text.substring(12458, 12483);//E-Center
-                    break;
+                    return GasStation;
                 default :
                     GasStation = text.substring(13611, 13638);//Mowak aka Tankpool
-                    break;
-
-            }
-
-
-            return html.substring(4, 6);
+                    return GasStation;
+            }          
         }
 
         public float parsePrice(int ID){
             //ließt Preis aus 
+            float price;
+            String text = getHTML();
+            
+            switch (ID){
+                case 00:
+                    price = text.substring();
+                    return price;
+                case 01:
+                    price = text.substring();
+                    return price;
+                case 02:
+                    price = text.substring();
+                    return price;
+                case 03:
+                    price = text.substring();
+                    return price;
+                default:
+                    price = text.substring();
+                    return price;
+            }
             
         
         }
