@@ -4,9 +4,9 @@ import java.io.*;
 
 public class read{
 
-    private static String html;
+    public final String html;
 
-        public void readHTML(String path) throws FileNotFoundException, IOException{
+        public String readHTML(String path) throws FileNotFoundException, IOException{
             String lines = null;
         
             BufferedReader reader = new BufferedReader(new FileReader("path"));
@@ -16,11 +16,12 @@ public class read{
             }
         
             reader.close();
-            setHTML(lines);
+            //setHTML(lines);
+            return lines;
         }
 
     public read(int GasID, String path) throws IOException{
-        readHTML(path);
+        this.html = readHTML(path);//TODO(Torben):Ask someone why it doesnt count if you want to set the private final var
         parseGasStationOverID(GasID);
         parsePrice(GasID);
     }
@@ -28,7 +29,8 @@ public class read{
         public String parseGasStationOverID(int GasID){
             //liest Tankstelle aus
             String GasStation;
-            String text = getHTML();
+            //String text = getHTML();
+            String text = html; //for the public var html
 
             switch(GasID){
                 case 00:
@@ -53,7 +55,9 @@ public class read{
         public float parsePrice(int GasID){
             //ließt Preis aus 
             float price;
-            String text = getHTML();
+            //String text = getHTML();
+            String text = html; //for the public var html
+
             
             switch (GasID){
                 case 00:
@@ -76,7 +80,7 @@ public class read{
         
         }
 
-
+        /*
         public void setHTML(String hmtl){
             this.html = html;
             //TODO(Torben): look for the static var and why is it here useless!
@@ -85,4 +89,5 @@ public class read{
         public String getHTML(){
             return this.html;
         }
+        */
 }
