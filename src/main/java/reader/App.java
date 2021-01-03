@@ -5,50 +5,43 @@ package reader;
 import java.io.*;
 
 public class App {
+  private String pfad;
 
-  private String name;
-  private float price;
-  private String time; 
+  public String getPath(){
+    return this.pfad;
+  }
 
+  public void setPath(String pfad){
+    this.pfad = pfad;
+  }
 
-        public static void main(String[] args) {  
-            //TODO()Torben: add automatisation for ID and path delivery
-            ID id = new ID();          
-            System.out.println("D/B_ID: " + id);//ID fuer Zeile
+  public static void main(String[] args) throws IOException{  
+   
+      //TODO()Torben: add automatisation for ID and path delivery
+      ID id = new ID();         
+      System.out.println("D/B_ID: " + id.getID());//ID fuer Zeile
+      
+      Dates longDate = new Dates();
+      System.out.println("D/B_Jahr    : " + longDate.getYear());
+      System.out.println("D/B_Monat   : " + longDate.getMonth());
+      System.out.println("D/B_Tag     : " + longDate.getDay() +"(" + longDate.getDow() + ")");
+      System.out.println("D/B_Uhrzeit : " + longDate.getTime());
+      
+      //read r = new read(4, "/home/torbeng/Code/Test/Doctype-html-bsp.txt");
 
-            Dates longDate = new Dates();
-            System.out.println("D/B_Jahr: " + longDate.getYear());
-            System.out.println("D/B_Monat: " + longDate.getMonth());
-            System.out.println("D/B_Tag: " + longDate.getDay());
-            System.out.println("D/B_Uhrzeit: " + longDate.getTime());
+      //String text = r.readHTML("/home/torbeng/Code/Test/Doctype-html-bsp.txt");
+      
+      
+      for(int GasID = 0; GasID < 5; ++GasID){
 
-            for(int GasID = 0; GasID < 5; ++GasID){
-
-              read r = new read(GasID, path );
-              //TODO(Torben): create OP for getting the Path of the html :D
-              System.out.println("D/B_T_ID: " + read.parseGasStationOverID(GasID));//ID fuer Tankstelle bzw. zugehörig zur Tankstelle
-              System.out.println("D/B_Preis: " + read.parsePrice(GasID));
-              //TODO(Torben):look for the prictures on your phone, to understand the static thing 
-
-          }
-
-            FileIntoDatabase f = new FileIntoDatabase();
-            String dataName;
-            //dataName = f.DateiAuslesen(f.getAlleDateiNamen());
-            //dataName = "Fri Sep 18 14:37:55 CEST 2020";
-            String s;
-            dataName ="/home/torbeng/Code/Daisler/Fri Sep 18 14:37:55 CEST 2020";
-            try {
-                System.out.println(f.DateiAuslesen(dataName)); 
-                s = f.DateiAuselsen(dataName);
-                f.getPrices(s);
-
-            }
-              catch(Exception e) {
-                e.printStackTrace();
-              }
-            
-    
-
-    }
+        read r = new read(GasID, "/home/torbeng/Code/Test/Doctype-html-bsp.txt");
+        //TODO(Torben): create OP for getting the Path of the html :D
+        System.out.println("D/B_T_ID: " + r.parseGasStationOverID(GasID));//ID fuer Tankstelle bzw. zugehörig zur Tankstelle
+        System.out.println("D/B_Preis: " + r.parsePrice(GasID));
+        
+        //TODO(Torben):look for the prictures on your phone, to understand the static thing 
+        
+      }
+      
+  }
 }
