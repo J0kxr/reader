@@ -34,7 +34,7 @@ public class App {
       
       for(int GasID = 0; GasID < 5; ++GasID){
 
-        read r = new read(GasID, "/home/torbeng/Code/Test/Doctype-html-bsp.txt");
+        read r = new read(GasID, "/home/torbeng/Code/reader/src/main/java/reader/Doctype-html-bsp.txt");
         //TODO(Torben): create OP for getting the Path of the html :D
         System.out.println("D/B_T_ID: " + r.parseGasStationOverID(GasID));//ID fuer Tankstelle bzw. zugehörig zur Tankstelle
         System.out.println("D/B_Preis: " + r.parsePrice(GasID));
