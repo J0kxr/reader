@@ -1,9 +1,11 @@
 package reader;
 
+import org.jsoup.nodes.Node;
 import java.io.*;
 
 public class read{
 
+   /*
     public final String html;
 
         public String readHTML(String path) throws FileNotFoundException, IOException{
@@ -83,7 +85,7 @@ public class read{
         /*
         public void setHTML(String hmtl){
             this.html = html;
-            //TODO(Torben): look for the static var and why is it here useless!
+            //TODO(Torben): look for the static var and why is it useless here!
         }
 
         public String getHTML(){
